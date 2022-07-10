@@ -1,0 +1,334 @@
+/*Top part of the web page*/
+store{
+    margin: 0;
+    width: 100%;
+    background-color: antiquewhite;
+    display: inline-block;
+}
+/*Adding flexbox*/
+top{
+    display: flex;
+}
+/*For Logo*/
+left{
+    flex: 5%;
+}
+/*For name and note of store*/
+right{
+    flex: 95%;
+}
+/*Navigation Bar*/
+nav{
+    background-color: aqua;
+    display: block;
+    padding: 0.5rem 5rem;
+}
+/*Contents of navigation bar*/
+home,cards,contact_us,search{
+    font-size: 20px;
+    padding: 2rem;
+}
+/*hover effect on navigation bar*/
+home:hover,cards:hover,contact_us:hover,search:hover{
+    color: grey;
+    transition: 0.4s;
+    cursor: pointer;
+}
+/*search option of navigation bar*/
+search{
+    position: absolute;
+    right: 4rem;
+    margin-top: -2rem;
+}
+/*adding logo of the store*/
+logo{
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    display: inline-block;
+    background-image: url('Image/logo.png');
+    background-repeat: no-repeat;
+    background-size: 100px;
+    width: 100px;  
+    height: 60px;
+}
+/*name of the store*/
+name{
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5rem;
+}
+/*note of the store*/
+note{
+    display: block;
+    color: grey;
+    font-size: 25px;
+    text-align: center;
+} 
+/*contact details of the store*/
+contact_details{
+    width: 100%;
+    background-color: antiquewhite;
+    display: flex;
+    padding-bottom: 1rem;
+}
+address,contact_info{
+    flex: 50%;
+    text-align: left;
+    padding: 1rem 0 0 10rem;
+}
+/*hover on email and url*/
+email:hover,url:hover{
+    cursor: pointer;
+}
+/*managing font of location and contact*/
+location,contact_text{
+    font-size: 19px;
+    font-weight: bold;
+}
+/*contents of address*/
+street,city,postcode,contact,email,url{
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    padding: 0 0 0.5rem 1rem;
+    font-size: 17px;
+}
+/*Block for the branch*/
+branch{
+    margin: 2rem;
+    display: block;
+    background-color: rgb(82, 134, 180);
+    padding: 0.5rem 3rem;
+    border: 0px solid black;
+}
+/*details of branch*/
+branch_detail{
+    display: block;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.5rem;
+}
+/*Name of branch*/
+branch_name{
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 0.5rem;
+}
+/*Other details of branch*/
+branch_address,mobile_no,toll_free,branch_email{
+    display: block;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.1rem;
+}
+/*Gift couchers*/
+voucher{
+    display: flex;
+    margin-bottom: 1rem;
+}
+gift_vouchers{
+    padding: 1rem;
+    flex: 50%;
+    border: 0px solid black;
+    border-top-left-radius: 5%;
+    margin: 0.5rem 2rem;
+    background-color: aliceblue;
+    box-shadow: 10px 10px;
+}
+/*Buy button and text*/
+buy{
+    background: aliceblue;
+    border: 40px solid rgb(75, 168, 75);
+    float: right;
+    margin-right: -1rem;
+    margin-top: -1rem;
+    border-left: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+}
+buy_txt{
+    float: right;
+    margin-right: -4.5rem;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    transform: rotate(47deg);
+}
+/*hover effect on buy*/
+buy_txt:hover{
+    cursor: pointer;
+    color: rgb(217, 206, 206);
+}
+/*adding image where image_id is walmart*/
+[image_id="walmart"]{
+    display: block;
+    background-image: url('Image/walmart.png');
+    background-repeat: no-repeat;
+    border: 2px solid grey;
+    margin: 1rem auto;
+    background-size: 225px;
+    width: 225px;
+    height: 150px;
+}
+/*hover on the image*/
+voucher_image:hover{
+    transform: scale(1.35,1.15);
+    transition: 1s;
+}
+/*adding image where image_id is adidas*/
+[image_id="adidas"]{
+    display: block;
+    background-image: url('Image/adidas.png');
+    background-repeat: no-repeat;
+    border: 2px solid grey;
+    margin: 1rem auto;
+    background-size: 226px;
+    width: 225px;
+    height: 150px;
+}
+/*adding image where image_id is amazon*/
+[image_id="amazon"]{
+    display: block;
+    background-image: url('Image/amazon.png');
+    background-repeat: no-repeat;
+    border: 2px solid grey;
+    margin: 1rem auto;
+    background-size: 225px;
+    width: 225px;
+    height: 150px;
+}
+/*adding image where image_id is argos*/
+[image_id="argos"]{
+    display: block;
+    background-image: url('Image/argos.png');
+    background-repeat: no-repeat;
+    border: 2px solid grey;
+    margin: 1rem auto;
+    background-size: 225px;
+    width: 225px;
+    height: 150px;
+}
+/*adding image where image_id is spotify*/
+[image_id="spotify"]{
+    display: block;
+    background-image: url('Image/spotify.png');
+    background-repeat: no-repeat;
+    border: 2px solid grey;
+    margin: 1rem auto;
+    background-size: 225px;
+    width: 225px;
+    height: 150px;
+}
+/*adding image where image_id is scp*/
+[image_id="scp"]{
+    display: block;
+    background-image: url('Image/scp.png');
+    background-repeat: no-repeat;
+    border: 2px solid grey;
+    margin: 1rem auto;
+    background-size: 225px;
+    width: 225px;
+    height: 150px;
+}
+/*name and redeem anount of the gift card*/
+voucher_name,redeem_amount{
+    display: block;
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+/*edition of the gift card*/
+edition{
+    display: block;
+    float: right;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 2rem;
+    margin-right: 2rem;
+    padding: 0.2rem;
+    transform: rotate(340deg);
+    margin-top: -3rem;
+}
+/*table to add contents of gift card*/
+table{
+    display: block;
+}
+table_row{
+    display: flex;
+}
+/*text for the description of content*/
+type_txt,company_txt,rating_txt,valid_txt,delivery_txt,return_txt,cost_txt,description_txt{
+    flex: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0.5rem 1rem;
+    border-bottom: 1px solid black;
+}
+company,voucher_type,voucher_validity,delivery,return_policy{
+    flex: 50%;
+    margin: 0 1rem;
+    font-size: 17px;
+}
+/*adding rating icon*/
+rating_icon{
+    background-image: url('Image/rating.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    flex: 48%;
+}
+/*hover effect on the rating icon*/
+rating_icon:hover{
+    transform: scaleY(1.5);
+    transition: 0.5s;
+}
+voucher_rating{
+    margin: 0.25rem 0.25rem 0 1rem;
+    font-size: 17px;
+}
+voucher_cost{
+    margin: 0 1rem;
+    font-size: 22px;
+    font-weight: bold;
+}
+discount{
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+/*applying line-through decoration of text*/
+[discount_id="discounted"]{
+    text-decoration: 1px line-through;
+}
+/*total price of the card*/
+total_price{
+    margin: 0.5rem 1rem;
+    font-size: 22px;
+    font-weight: bold;
+}
+/*description of card in list format*/
+description{
+    font-size: 15px;
+    font-style: italic;
+    margin: 0 2rem;
+    display: list-item;
+    list-style: disc;
+    text-align: justify;
+}
+return_duration{
+    font-size: 12px;
+    margin: 0 1rem;
+}
+/*footer sectio of the webpage*/
+footer{
+    display: block;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 0.25rem 0;
+    word-spacing: 0.25rem;
+}

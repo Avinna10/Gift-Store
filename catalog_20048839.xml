@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+    Name: Avinna Maharjan
+    ID: 20048839
+    Date: 4/3/2022
+-->
+
+<!-- Css External Link -->
+<?xml-stylesheet type="text/css" href="catalog_20048839.css"?>
+
+<!-- Root element-->
+<Avinna_Store xsi:noNamespaceSchemaLocation="catalog_20048839.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <store id="1001">
+        <!-- Store logo and Name-->
+        <top>
+            <left>
+                <logo />
+            </left>
+            <right>
+                <name store_type="physical">Avinna Gift Voucher Store</name>
+                <note>Go Cashless</note>
+            </right>
+        </top>
+        <!-- Navigation Bar-->
+        <nav>
+            <home>Home</home>
+            <cards>Gift Cards</cards>
+            <contact_us>Contact Us</contact_us>
+            <search>Search</search>
+        </nav>
+    </store>
+    <!-- branch element [It repeats multiple times]-->
+    <branch branch_id="A10001A" open="10hr/day">        <!-- Open; optional attribute-->
+        <!-- Details of branch-->
+        <branch_detail>
+            <!-- Simplex Type Element-->
+            <branch_name>Branch A</branch_name>
+            <branch_address>Address: Greenwich, London</branch_address>
+            <!-- Complex Type with child element-->
+            <branch_contact>
+                <mobile_no>Mobile: +44 (0)79 1114 5623</mobile_no>
+                <toll_free>Toll Free: 0808 9856742</toll_free>      <!-- optional element-->
+                <branch_email>Email: branch_greenwich@ags.co.uk</branch_email>      <!-- optional element-->
+            </branch_contact>
+        </branch_detail>
+        <!-- Voucher Section [Contains the information of different gift vouchers]-->
+        <voucher>
+            <!-- Here, Gift Vouchers contains the details of the Spotify gift card-->
+            <!-- Complex Type with attribute and child element-->
+            <gift_vouchers voucher_id="ID1001sP1">
+                <!-- Empty Elemeny-->
+                <buy/>
+                <!-- Simple Type with data string-->
+                <buy_txt>Buy</buy_txt>
+                <!-- Complex Type with attribute-->
+                <voucher_image image_id="spotify" />
+                <!-- Complex Type with attribute and data string-->
+                <voucher_name serial_no="1234567890">Spotify E-Gift Card</voucher_name>
+                <redeem_amount>(&#163;25)</redeem_amount>
+                <edition>Limited Edition</edition>      <!-- optional element-->
+                <!-- Display contents in tabular format-->
+                <table>
+                    <!-- Table_row specifies rows of the table
+                    It has child elements which holds data of gift card-->
+                    <table_row>
+                        <!-- Simple type with data string-->
+                        <company_txt>Company</company_txt>
+                        <type_txt>Type</type_txt>
+                    </table_row>
+                    <table_row>
+                        <!-- Complex Type with attribute and data string-->
+                        <company platform="online">Spotify</company>
+                        <voucher_type code_no="20AB">Digital</voucher_type> 
+                    </table_row>
+                    <table_row>
+                        <!-- Simple type with data string-->
+                        <rating_txt>Rating</rating_txt>
+                        <valid_txt>Validity</valid_txt>
+                    </table_row>
+                    <table_row>
+                        <!-- Simple type with data string-->
+                        <voucher_rating>4.2</voucher_rating>
+                        <!-- Empty Element-->
+                        <rating_icon />
+                        <!-- COmplex Type with attribute and data string-->
+                        <voucher_validity valid="international">1 year</voucher_validity>
+                    </table_row>
+                    <table_row>
+                        <delivery_txt>Delivery</delivery_txt>
+                        <return_txt>Return</return_txt>
+                    </table_row>
+                    <table_row>
+                        <delivery delivery_type="online">Online</delivery>
+                        <return_policy>Non-returnable</return_policy>
+                    </table_row>
+                    <table_row>
+                        <cost_txt>Price</cost_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_cost discount_id="discounted">&#163;27</voucher_cost>      <!-- optional attribute discount_id-->
+                        <discount>[ 10% off ]</discount>        <!-- optional element-->
+                    </table_row>
+                    <table_row>
+                        <total_price>New Price: &#163;24.3</total_price>        <!-- optional element-->
+                    </table_row>
+                    <table_row>
+                        <description_txt>Description</description_txt>
+                    </table_row>
+                    <table_row>
+                        <description><![CDATA[ Cannot be redeemed for the Spotify Family or Student Plans.]]></description>
+                    </table_row>
+                </table>
+            </gift_vouchers>
+            <!-- Here, Gift Vouchers contains the details of the Adidas gift card-->
+            <gift_vouchers voucher_id="ID1001aD2">
+                <buy/>
+                <buy_txt>Buy</buy_txt>
+                <voucher_image image_id="adidas" />
+                <voucher_name serial_no="9854785478">Adidas Gift Card</voucher_name>
+                <redeem_amount>(&#163;50)</redeem_amount>
+
+                <table>
+                    <table_row>
+                        <company_txt>Company</company_txt>
+                        <type_txt>Type</type_txt>
+                    </table_row>
+                    <table_row>
+                        <company platform="shop">Adidas</company>
+                        <voucher_type code_no="45AA">Physical</voucher_type>
+                    </table_row>
+                    <table_row>
+                        <rating_txt>Rating</rating_txt>
+                        <valid_txt>Validity</valid_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_rating>4.5</voucher_rating>
+                        <rating_icon />
+                        <voucher_validity valid="international">1.5 years</voucher_validity>
+                    </table_row>
+                    <table_row>
+                        <delivery_txt>Delivery</delivery_txt>
+                        <return_txt>Return</return_txt>
+                    </table_row>
+                    <table_row>
+                        <delivery delivery_type="home_delivery" charge="2">Home</delivery>  <!-- optional attribute charge; shipping charge for home delivery-->
+                        <!-- Complex Type with Mixed-->
+                        <return_policy>
+                            Returnable
+                            <return_duration>[Within 5 days of delivery]</return_duration>  <!-- optional element-->
+                        </return_policy>
+                    </table_row>
+                    <table_row>
+                        <cost_txt>Price</cost_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_cost>&#163;54</voucher_cost>
+                    </table_row>
+                    <table_row>
+                        <description_txt>Description</description_txt>
+                    </table_row>
+                    <table_row>
+                        <description><![CDATA[ Can be used to redeem for merchandise on adidas.com and adidas Outlet stores all over the world.]]></description>
+                    </table_row>
+                </table>
+            </gift_vouchers>
+        </voucher>
+    </branch>
+    <branch branch_id="A10001B">
+        <branch_detail>
+            <branch_name>Branch B</branch_name>
+            <branch_address>Address: Holborn, London</branch_address>
+            <branch_contact>
+                <mobile_no>Mobile: +44 (0)79 1324 5572</mobile_no>
+                <branch_email>Email: branch_holborn@ags.co.uk</branch_email>    <!-- optional element-->
+            </branch_contact>
+        </branch_detail>
+        <voucher>
+            <!-- Here, Gift Vouchers contains the details of the Argos gift card-->
+            <gift_vouchers voucher_id="ID1001aR3">
+                <buy/>
+                <buy_txt>Buy</buy_txt>
+                <voucher_image image_id="argos" />
+                <voucher_name serial_no="1109547888">Argos Gift Card</voucher_name>
+                <redeem_amount>(&#163;75)</redeem_amount>
+
+                <table>
+                    <table_row>
+                        <company_txt>Company</company_txt>
+                        <type_txt>Type</type_txt>
+                    </table_row>
+                    <table_row>
+                        <company platform="shop">Argos</company>
+                        <voucher_type code_no="77CZ">Physical</voucher_type>
+                    </table_row>
+                    <table_row>
+                        <rating_txt>Rating</rating_txt>
+                        <valid_txt>Validity</valid_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_rating>4.1</voucher_rating>
+                        <rating_icon />
+                        <voucher_validity valid="national">8 months</voucher_validity>
+                    </table_row>
+                    <table_row>
+                        <delivery_txt>Delivery</delivery_txt>
+                        <return_txt>Return</return_txt>
+                    </table_row>
+                    <table_row>
+                        <delivery delivery_type="home_delivery" charge="2">Home</delivery>      <!-- optional attribute charge; shipping charge for home delivery-->
+                        <return_policy>
+                            Returnable
+                            <return_duration>[Within 3 days of delivery]</return_duration>      <!-- optional element-->
+                        </return_policy>
+                    </table_row>
+                    <table_row>
+                        <cost_txt>Price</cost_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_cost>&#163;77</voucher_cost>
+                    </table_row>
+                    <table_row>
+                        <description_txt>Description</description_txt>
+                    </table_row>
+                    <table_row>
+                        <description><![CDATA[ Can be used to redeem for the products sold in Argos store all over the UK.]]></description>
+                    </table_row>
+                </table>
+            </gift_vouchers>
+            <!-- Here, Gift Vouchers contains the details of the Walmart gift card-->
+            <gift_vouchers voucher_id="ID1001wA4">
+                <buy/>
+                <buy_txt>Buy</buy_txt>
+                <voucher_image image_id="walmart" />
+                <voucher_name serial_no="1001658000">Walmart E-Gift Card</voucher_name>
+                <redeem_amount>(&#163;60)</redeem_amount>
+
+                <table>
+                    <table_row>
+                        <company_txt>Company</company_txt>
+                        <type_txt>Type</type_txt>
+                    </table_row>
+                    <table_row>
+                        <company platform="shop">Walmart</company>
+                        <voucher_type code_no="65AG">Digital</voucher_type> 
+                    </table_row>
+                    <table_row>
+                        <rating_txt>Rating</rating_txt>
+                        <valid_txt>Validity</valid_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_rating>4.3</voucher_rating>
+                        <rating_icon />
+                        <voucher_validity valid="international">15 months</voucher_validity>
+                    </table_row>
+                    <table_row>
+                        <delivery_txt>Delivery</delivery_txt>
+                        <return_txt>Return</return_txt>
+                    </table_row>
+                    <table_row>
+                        <delivery delivery_type="online">Online</delivery>
+                        <return_policy>
+                            Returnable
+                            <return_duration>[Within 1 week of delivery]</return_duration> <!-- optional element-->
+                        </return_policy>
+                    </table_row>
+                    <table_row>
+                        <cost_txt>Price</cost_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_cost>&#163;65</voucher_cost>
+                    </table_row>
+                    <table_row>
+                        <description_txt>Description</description_txt>
+                    </table_row>
+                    <table_row>
+                        <description><![CDATA[ Can be used to get low prices on popular products in stores or online at walmart.com.]]></description>
+                    </table_row>
+                </table>
+            </gift_vouchers>
+        </voucher>
+    </branch>
+    <branch branch_id="C10001C" open="8hr/day">
+        <branch_detail>
+            <branch_name>Branch C</branch_name>
+            <branch_address>Address: Saffron Hill, London</branch_address>
+            <branch_contact>
+                <mobile_no>Mobile: +44 (0)79 1912 9914</mobile_no>
+                <toll_free>Toll Free: 0808 9554876</toll_free>      <!-- optional element-->
+            </branch_contact>
+        </branch_detail>
+        <voucher>
+            <!-- Here, Gift Vouchers contains the details of the Amazon gift card-->
+            <gift_vouchers voucher_id="ID1001aM5">
+                <buy/>
+                <buy_txt>Buy</buy_txt>
+                <voucher_image image_id="amazon" />
+                <voucher_name serial_no="1120345006">Amazon E-Gift Card</voucher_name>
+                <redeem_amount>(&#163;100)</redeem_amount>
+
+                <table>
+                    <table_row>
+                        <company_txt>Company</company_txt>
+                        <type_txt>Type</type_txt>
+                    </table_row>
+                    <table_row>
+                        <company platform="online">Amazon</company>
+                        <voucher_type code_no="69WQ">Digital</voucher_type> 
+                    </table_row>
+                    <table_row>
+                        <rating_txt>Rating</rating_txt>
+                        <valid_txt>Validity</valid_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_rating>4.9</voucher_rating>
+                        <rating_icon />
+                        <voucher_validity valid="international">7 months</voucher_validity>
+                    </table_row>
+                    <table_row>
+                        <delivery_txt>Delivery</delivery_txt>
+                        <return_txt>Return</return_txt>
+                    </table_row>
+                    <table_row>
+                        <delivery delivery_type="online">Online</delivery> 
+                        <return_policy>Non-Returnable</return_policy>
+                    </table_row>
+                    <table_row>
+                        <cost_txt>Price</cost_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_cost>&#163;104</voucher_cost>
+                    </table_row>
+                    <table_row>
+                        <description_txt>Description</description_txt>
+                    </table_row>
+                    <table_row>
+                        <description><![CDATA[ Amazon E-Gift card can be converted to Amazon Pay Balance to shop products on Amazon.]]></description>
+                    </table_row>
+                </table>
+            </gift_vouchers>
+            <!-- Here, Gift Vouchers contains the details of the SCP gift card-->
+            <gift_vouchers voucher_id="ID1001sC6">
+                <buy/>
+                <buy_txt>Buy</buy_txt>
+                <voucher_image image_id="scp" />
+                <voucher_name serial_no="1124888562">SCP Gift Card</voucher_name>
+                <redeem_amount>(&#163;90)</redeem_amount>
+                <edition>Limited Edition</edition>  <!-- optional element-->
+
+                <table>
+                    <table_row>
+                        <company_txt>Company</company_txt>
+                        <type_txt>Type</type_txt>
+                    </table_row>
+                    <table_row>
+                        <company platform="shop">SCP</company>
+                        <voucher_type code_no="33EO">Physical</voucher_type>    
+                    </table_row>
+                    <table_row>
+                        <rating_txt>Rating</rating_txt>
+                        <valid_txt>Validity</valid_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_rating>4.5</voucher_rating>
+                        <rating_icon />
+                        <voucher_validity valid="national">9 months</voucher_validity>
+                    </table_row>
+                    <table_row>
+                        <delivery_txt>Delivery</delivery_txt>
+                        <return_txt>Return</return_txt>
+                    </table_row>
+                    <table_row>
+                        <delivery delivery_type="home_delivery" charge="2">Home</delivery>  <!-- optional attribute charge-->
+                        <return_policy>
+                            Returnable
+                            <return_duration>[Within 5 days of delivery]</return_duration>  <!-- optional element-->
+                        </return_policy>
+                    </table_row>
+                    <table_row>
+                        <cost_txt>Price</cost_txt>
+                    </table_row>
+                    <table_row>
+                        <voucher_cost discount_id="discounted">&#163;95</voucher_cost> <!-- optional attribute discount_id-->
+                        <discount>[ 15% off ]</discount>    <!-- optional element-->
+                    </table_row>
+                    <table_row>
+                        <total_price>New Price: &#163;80.75</total_price>   <!-- optional element-->
+                    </table_row>
+                    <table_row>
+                        <description_txt>Description</description_txt>
+                    </table_row>
+                    <table_row>
+                        <description><![CDATA[ On the return of goods purchased using gift card, the credit will be issued back to the gift card.]]></description>
+                    </table_row>
+                </table>
+            </gift_vouchers>
+        </voucher>
+    </branch>
+    <!-- Contact Details of the store-->
+    <contact_details>
+        <!-- Location of the store-->
+        <address>
+            <location>Location</location>
+            <street>Street: 135 Curtain Road</street>
+            <city>City: London</city>
+            <postcode>Post Code: EC2A 3BX</postcode>
+        </address>
+        <!-- Contact Info of the store-->
+        <contact_info>
+            <contact_text>Contact Us</contact_text>
+            <contact>Contact: +44 (0)20 7785 2896</contact>
+            <email>Email: avgiftstore@ags.co.uk</email>
+            <url>URL: www.avgiftstore.co.uk</url>
+        </contact_info>
+    </contact_details>
+    <!-- Copyright Information-->
+    <footer>
+        <![CDATA[ Copyright © 2022 Avinna Gift Store. All Rights Reserved]]>
+    </footer>
+</Avinna_Store>

@@ -1,0 +1,468 @@
+<?xml version="1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Root Element-->
+    <xs:element name="Avinna_Store">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- CHild Elements of root element-->
+                <xs:element ref="store" />
+                <xs:element ref="branch" minOccurs="1" maxOccurs="unbounded" />
+                <xs:element ref="contact_details" />
+                <xs:element ref="footer" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Tags related to store element-->
+    <xs:element name="store">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="top" />
+                <xs:element ref="nav" />
+            </xs:sequence>
+            <xs:attribute ref="id" use="required" fixed="1001" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attribute name="id" type="xs:positiveInteger" />
+
+    <!-- Tags of element top-->
+    <xs:element name="top">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="left" />
+                <xs:element ref="right" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Tags of complex type element left-->
+    <xs:element name="left">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="logo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Tag of empty element logo-->
+    <xs:element name="logo" />
+
+    <!-- Tags of complex element right-->
+    <xs:element name="right">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" />
+                <xs:element ref="note" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Tags of complex element type-->
+    <xs:element name="name">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="store_type" use="required" fixed="physical" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attribute name="store_type" type="xs:string" />
+
+    <!-- Tags of simple type element note-->
+    <xs:element name="note" type="xs:string" />
+
+    <!-- Tags related to complex type element nav-->
+    <xs:element name="nav">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="home" />
+                <xs:element ref="cards" />
+                <xs:element ref="contact_us" />
+                <xs:element ref="search" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Child elements of nav-->
+    <xs:element name="home" type="xs:string" />
+    <xs:element name="cards" type="xs:string" />
+    <xs:element name="contact_us" type="xs:string" />
+    <xs:element name="search" type="xs:string" />
+
+    <!-- Start of tags for the element branch-->
+    <xs:element name="branch">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="branch_detail" maxOccurs="1" />
+                <xs:element ref="voucher" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute ref="branch_id" use="required"/>
+            <xs:attribute ref="open" use="optional" default="8hr/day"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Tags for attributes of branch-->
+    <xs:attribute name="branch_id">
+        <xs:simpleType>
+            <xs:restriction base="xs:ID">
+                <xs:pattern value="[A-Z][0-9]{5}[A-Z]" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="open" type="xs:string" />
+
+    <!-- Tags of complex type element branch-->
+    <xs:element name="branch_detail">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="branch_name" />
+                <xs:element ref="branch_address" />
+                <xs:element ref="branch_contact" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Restriction on element branch_name-->
+    <xs:element name="branch_name">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="Branch [A-Z]"></xs:pattern>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="branch_address" type="xs:string" />
+
+    <!-- Complex Type Element-->
+    <xs:element name="branch_contact">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mobile_no" />
+                <xs:element ref="toll_free" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="branch_email" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Simple Type Elements-->
+    <xs:element name="mobile_no" type="xs:string" />
+    <xs:element name="toll_free" type="xs:string" />
+    <xs:element name="branch_email" type="xs:string" />
+
+    <!-- Complex Type Element-->
+    <xs:element name="voucher">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gift_vouchers" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Complex Type Element-->
+    <xs:element name="gift_vouchers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="buy" />
+                <xs:element ref="buy_txt"/>
+                <xs:element ref="voucher_image" />
+                <xs:element ref="voucher_name" />
+                <xs:element ref="redeem_amount" />
+                <xs:element ref="edition" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="table" />
+            </xs:sequence>
+            <xs:attribute ref="voucher_id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Empty Element-->
+    <xs:element name="buy" />
+
+    <xs:element name="buy_txt" type="xs:string" />
+
+    <xs:element name="voucher_image">
+        <xs:complexType>
+            <xs:attribute ref="image_id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Use of Restriction (pattern)-->
+    <xs:attribute name="image_id">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="spotify|adidas|amazon|walmart|argos|scp" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:element name="voucher_name">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="serial_no" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Use of restriction (pattern)-->
+    <xs:attribute name="voucher_id">
+        <xs:simpleType>
+            <xs:restriction base="xs:ID">
+                <xs:pattern value="ID[0-9]{4}[a-z][A-Z][0-9]" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <!-- Use of restriction (length)-->
+    <xs:attribute name="serial_no">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:length value="10" /> 
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:element name="redeem_amount" type="xs:string" />
+
+    <!-- Use of restriction (enumeration)-->
+    <xs:element name="edition">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Limited Edition" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="table">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="table_row" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Child elements of elemenet table_row-->
+    <xs:element name="table_row">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="company_txt" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="type_txt" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="company" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="voucher_type" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="rating_txt" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="valid_txt" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="voucher_rating" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="rating_icon" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="voucher_validity" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="delivery_txt" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="return_txt" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="delivery" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="return_policy" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="cost_txt" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="voucher_cost" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="discount" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="total_price" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="description_txt" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="description" minOccurs="0" maxOccurs="1" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="company_txt" type="xs:string" />
+
+    <xs:element name="type_txt" type="xs:string" />
+
+    <!-- Complex Type Element-->
+    <xs:element name="company">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="reviewCompany">
+                    <xs:attribute ref="platform" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- Applying restriction for company element-->
+    <xs:simpleType name="reviewCompany">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Spotify" />
+            <xs:enumeration value="Walmart" />
+            <xs:enumeration value="Argos" />
+            <xs:enumeration value="Amazon" />
+            <xs:enumeration value="Adidas" />
+            <xs:enumeration value="SCP" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Use of restriction (pattern)-->
+    <xs:attribute name="platform">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="online|shop" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:element name="voucher_type">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="reviewType">
+                    <xs:attribute ref="code_no" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Use of restriction (pattern)-->
+    <xs:simpleType name="reviewType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Physical|Digital" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Use of restriction (pattern)-->
+    <xs:attribute name="code_no">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[0-9]{2}[A-Z]{2}" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:element name="rating_txt" type="xs:string" />
+    <xs:element name="valid_txt" type="xs:string" />
+
+    <!-- Use of restriction (max and min Inclusive)-->
+    <xs:element name="voucher_rating">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="1" />
+                <xs:maxInclusive value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- Empty Element-->
+    <xs:element name="rating_icon" />
+
+    <xs:element name="voucher_validity">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="valid" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Use of restriction (enumeration)-->
+    <xs:attribute name="valid">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="national" />
+                <xs:enumeration value="international" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:element name="delivery_txt" type="xs:string" />
+    <xs:element name="return_txt" type="xs:string" />
+
+    <!-- Complex Type Element-->
+    <xs:element name="delivery">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="delivery_type" use="required"/>
+                    <xs:attribute ref="charge" use="optional" fixed="2"/>   <!-- value of charge must be 2-->
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Use of restriction (enumeration)-->
+    <xs:attribute name="delivery_type">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="online" />
+                <xs:enumeration value="home_delivery" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="charge" type="xs:positiveInteger" />
+
+    <xs:element name="return_policy">
+        <xs:complexType mixed="true">
+            <xs:all>
+                <xs:element ref="return_duration" minOccurs="0" maxOccurs="1" />    <!-- represents optional element-->
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="return_duration" type="xs:string" />
+
+    <xs:element name="cost_txt"></xs:element>
+
+    <xs:element name="voucher_cost">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="discount_id" use="optional" fixed="discounted" />    <!-- value must be discounted-->
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attribute name="discount_id" type="xs:string" />
+    <xs:element name="discount" type="xs:string" />
+    <xs:element name="total_price" type="xs:string" />
+    <xs:element name="description_txt" type="xs:string" />
+    <xs:element name="description" type="xs:string" />
+
+    <!-- Starting of Tags for Contact Section-->
+    <xs:element name="contact_details">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="address" />
+                <xs:element ref="contact_info" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="address">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="location" />
+                <xs:element ref="street" />
+                <xs:element ref="city" />
+                <xs:element ref="postcode" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="location" type="xs:string" />
+    <xs:element name="street" type="xs:string" />
+    <xs:element name="city" type="xs:string" />
+    <xs:element name="postcode" type="xs:string" />
+
+    <xs:element name="contact_info">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="contact_text" />
+                <xs:element ref="contact" />
+                <xs:element ref="email" />
+                <xs:element ref="url" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- Ending of Tags for Contact Section-->
+
+    <xs:element name="contact_text" type="xs:string" />
+    <xs:element name="contact" type="xs:string" />
+    <xs:element name="email" type="xs:string" />
+    <xs:element name="url" type="xs:string" />
+
+    <!-- Simple Type Element footer-->
+    <xs:element name="footer" type="xs:string" />
+</xs:schema>
